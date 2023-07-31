@@ -1,4 +1,3 @@
-<p>home works!</p>
 <div class="container mt-4">
   <div class="row">
     <div class="col-md-3" *ngFor="let product of products.products">
@@ -14,11 +13,17 @@
           <p class="card-text">Price: {{ product.price }}</p>
           <p class="card-text">Rating: {{ product.rating }}</p>
           <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-info mx-3">Fav</button>
+            <button
+              type="button"
+              class="btn btn-info mx-3"
+              (click)="addToFavorites(product)"
+            >
+              Fav
+            </button>
             <button
               type="button"
               class="btn btn-success"
-              (click)="addToFavorites(product)"
+              (click)="addToCart(product)"
             >
               Add to cart
             </button>
